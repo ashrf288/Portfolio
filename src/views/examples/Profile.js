@@ -19,7 +19,7 @@ import React from "react";
 
 // reactstrap components
 import { Button, Card, Container, Row, Col } from "reactstrap";
-
+import Carousels from "../../components/Carousel";
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
@@ -190,12 +190,14 @@ class Profile extends React.Component {
                           {this.state.link}
                         </a>
                       </Col>
+
                     </Row>
                   </div>
                 </div>
               </Card>
             </Container>
           </section>
+          <Carousels  style={{width:'50%'}}/>
         </main>
         <SimpleFooter />
       </>
