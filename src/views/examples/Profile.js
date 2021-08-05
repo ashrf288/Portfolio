@@ -25,7 +25,19 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 import profile from "assets/img/theme/team-4-800x800.jpg";
 
+
+
 class Profile extends React.Component {
+
+  constructor(){
+    super();
+    this.state={
+      text: `Hello my name is ashrf obeidat and i have a bacholer degree
+      in plant production from jordan university of scince and technology i
+       recently finished an extinsev  web develpoment boot camp`,
+       link: 'show more'
+    }
+  }
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -71,7 +83,7 @@ class Profile extends React.Component {
                   <Row className="justify-content-center">
                     <Col className="order-lg-2" lg="3">
                       <div className="card-profile-image">
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
+                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           <img
                             alt="..."
                             className="rounded-circle"
@@ -89,7 +101,7 @@ class Profile extends React.Component {
                           className="mr-4"
                           color="info"
                           href="#pablo"
-                          onClick={e => e.preventDefault()}
+                          onClick={(e) => e.preventDefault()}
                           size="sm"
                         >
                           Connect
@@ -98,7 +110,7 @@ class Profile extends React.Component {
                           className="float-right"
                           color="default"
                           href="#pablo"
-                          onClick={e => e.preventDefault()}
+                          onClick={(e) => e.preventDefault()}
                           size="sm"
                         >
                           Message
@@ -124,34 +136,58 @@ class Profile extends React.Component {
                   </Row>
                   <div className="text-center mt-5">
                     <h3>
-                      Jessica Jones{" "}
+                      Ashrf Obeidat{" "}
                       <span className="font-weight-light">, 27</span>
                     </h3>
                     <div className="h6 font-weight-300">
                       <i className="ni location_pin mr-2" />
-                      Bucharest, Romania
+                      Irbed, Jordan
                     </div>
                     <div className="h6 mt-4">
                       <i className="ni business_briefcase-24 mr-2" />
-                      Solution Manager - Creative Tim Officer
+                      Full Stack Web Developer
                     </div>
                     <div>
                       <i className="ni education_hat mr-2" />
-                      University of Computer Science
+                      Abdul Aziz Al Ghurair School of Advanced Computing (ASAC)
                     </div>
                   </div>
                   <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p>
-                          An artist of considerable range, Ryan — the name taken
-                          by Melbourne-raised, Brooklyn-based Nick Murphy —
-                          writes, performs and records all of his own music,
-                          giving it a warm, intimate feel with a solid groove
-                          structure. An artist of considerable range.
+                          {this.state.text}
                         </p>
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          Show more
+                        <a href="#pablo" onClick={(e) =>{
+                          this.setState({
+                            text:`Hello my name is ashrf obeidat and i have a bacholer degree
+                            in plant production from jordan university of scince and technology i
+                             recently finished an extinsev  web develpoment boot camp which i belive provided me
+                            with the knowledge and skill that makes me sutitable
+                            for this great position I strongly bieleve in teamwork
+                            and group disscations as i had the chance to work with
+                            several amazing teams on several projects which i
+                            beileve provided me with enough expierence and skills
+                            to enhanced my ability to commincate efficteivly with
+                            tammates and clients , i beileve that i will fit in
+                            this great working environmnet and my skills will
+                            develop even more and of course , this will be a great
+                            chance to make new friends . What excites you the most
+                            about tech? the feeling that Every thing is possible
+                            as far as technology is been concerned. When you are
+                            surrounded with technical things you feel much more
+                            ‘powerfull'. And the feeling that you are not alone is
+                            always backing you .`,
+                            link:'show less'
+                          })
+                          this.state.link==='show less'&& this.setState({
+                            text:`Hello my name is ashrf obeidat and i have a bacholer degree
+                            in plant production from jordan university of scince and technology i
+                             recently finished an extinsev  web develpoment boot camp `,
+                            link:'show more'
+                          })
+                          e.preventDefault()} }>
+                          {this.state.link}
                         </a>
                       </Col>
                     </Row>
