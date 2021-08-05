@@ -10,22 +10,23 @@ const items = [
     altText: 'a',
     caption: '',
     header: '',
-    key:1
+    key:0
   },
   {
     src:Image2,
     altText: 'a',
     caption: '',
     header: '',
-    key:2
+    key:1
   },
   {
     src: Image3,
     altText: 'a',
     caption: '',
     header: '',
-    key:3
+    key:2
   }
+
 ];
 
 class Carousels extends React.Component {

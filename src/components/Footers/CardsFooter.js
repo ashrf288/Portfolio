@@ -141,7 +141,7 @@ class CardsFooter extends React.Component {
                     href="https://www.creative-tim.com?ref=adsr-footer"
                     target="_blank"
                   >
-                    Creative Tim
+                   Ashrf Obeidat
                   </a>
                   .
                 </div>
