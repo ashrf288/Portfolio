@@ -197,7 +197,10 @@ class Profile extends React.Component {
               </Card>
             </Container>
           </section>
-          <Carousels  style={{width:'50%'}}/>
+          <div  style={{width:'90%', margin:'0 auto',height:'30%'}}>
+          <Carousels />
+          </div>
+
         </main>
         <SimpleFooter />
       </>
