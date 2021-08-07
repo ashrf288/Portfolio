@@ -17,18 +17,18 @@
 */
 import React from "react";
 // nodejs library that concatenates classes
-import classnames from "classnames";
-import promo1 from "assets/img/theme/promo-1.png";
-import cardImg from "assets/img/theme/img-1-1200x1000.jpg";
-import ill2 from "assets/img/ill/ill-2.svg";
-import team1 from "assets/img/theme/team-1-800x800.jpg";
-import team2 from "assets/img/theme/team-2-800x800.jpg";
-import team3 from "assets/img/theme/team-3-800x800.jpg";
-import team4 from "assets/img/theme/team-4-800x800.jpg";
 import Image1 from 'assets/img/theme/salmoon1.png';
 import Image2 from 'assets/img/theme/busmall.png';
-import Image3 from 'assets/img/theme/salmoon3.png';
 import Image4 from 'assets/img/theme/ev.png';
+import Image5 from 'assets/img/theme/coming.jpeg';
+
+let arr=[
+  { name:'cookie-stand',img:Image1,url:"https://ashrf288.github.io/cookie-stand/",desc:' calculte cookies sales and average for each city'},
+  { name:'Buss mall',img:Image2,url:"https://ashrf288.github.io/bus-mall/",desc:'  select you favorit items from variaty of items avilable'},
+  { name:'Emergency-advisor',img:Image4,url:"https://anti-devs.github.io/emergency-advisor/",desc:' chronic disease tips and cautionary measures'},
+  { name:'301 project',img:Image5,url:'#',desc:' COMING SOON'},
+  { name:'401 project',img:Image5,url:'#',desc:' COMING SOON'},
+]
 
 // reactstrap components
 import {
@@ -36,15 +36,7 @@ import {
   Button,
   Card,
   CardBody,
-  CardImg,
-  FormGroup,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
   Container,
-  NavItem,
-  Nav,
   Row,
   Col
 } from "reactstrap";
@@ -55,7 +47,6 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 // index page sections
-import Download from "../IndexSections/Download.js";
 import { NavLink,Link } from "react-router-dom";
 
 class Landing extends React.Component {
@@ -121,116 +112,47 @@ class Landing extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5" style={{textAlign:'center'}}>
+                  { arr.map(obj=>{
+                     return( <Col lg="4">
+                     <Card className="card-lift--hover shadow border-0">
+                       <CardBody className="py-5" style={{textAlign:'center'}}>
 
-                           <img src={Image4} style={{width:'250px'}}/>
+                          <img src={obj.img} style={{width:'250px'}}/>
 
-                          <h6 className="text-success text-uppercase">
-                          Emergency-advisor
-                          </h6>
-                          <p className="description mt-3">
-                          chronic disease tips and cautionary measures
-                          </p>
-                          <div>
-                            <Badge color="primary" pill className="mr-1">
-                              design
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              system
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              creative
-                            </Badge>
-                          </div>
-                          <Link
-                           to="https://web.facebook.com/ashraf.mazkoor/"
-                           target="_blank">
-                          <Button
-                            className="mt-4"
-                            color="primary"
-                            href="https://anti-devs.github.io/emergency-advisor/"
-                            target='_blank'
-                          >
-                            Visit Now
-                          </Button>
-                          </Link>
+                         <h6 className="text-success text-uppercase">
+                         {obj.name}
+                         </h6>
+                         <p className="description mt-3">
+                         {obj.desc}
+                         </p>
+                         <div>
+                           <Badge color="primary" pill className="mr-1">
+                             design
+                           </Badge>
+                           <Badge color="primary" pill className="mr-1">
+                             system
+                           </Badge>
+                           <Badge color="primary" pill className="mr-1">
+                             creative
+                           </Badge>
+                         </div>
+                         <Link
+                          to={obj.url}
+                          target="_blank">
+                         <Button
+                           className="mt-4"
+                           color="primary"
+                           href={obj.url}
+                           target='_blank'
+                         >
+                           Visit Now
+                         </Button>
+                         </Link>
 
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5" style={{textAlign:'center'}}>
-                          <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
-                          <img src={Image1} style={{width:'250px'}}/>
-
-                          </div>
-                          <h6 className="text-success text-uppercase">
-                          cookie-stand
-                          </h6>
-                          <p className="description mt-3">
-                           calculte cookies sales and average for each city
-                          </p>
-                          <div>
-                            <Badge color="primary" pill className="mr-1">
-                              design
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              system
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              creative
-                            </Badge>
-                          </div>
-                          <Button
-                            className="mt-4"
-                            color="primary"
-                            href="https://ashrf288.github.io/cookie-stand/"
-                            target='_blank'
-                          >
-                            Visit Now
-                          </Button>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col lg="4">
-                    <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5" style={{textAlign:'center'}}>
-                          <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
-                          <img src={Image2} style={{width:'250px'}}/>
-
-                          </div>
-                          <h6 className="text-success text-uppercase">
-                          Buss mall
-                          </h6>
-                          <p className="description mt-3">
-                           select you favorit items from variaty of items avilable
-                          </p>
-                          <div>
-                            <Badge color="primary" pill className="mr-1">
-                              design
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              system
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              creative
-                            </Badge>
-                          </div>
-                          <Button
-                            className="mt-4"
-                            color="primary"
-                            href="https://ashrf288.github.io/bus-mall/"
-                            target='_blank'
-                          >
-                            Visit Now
-                          </Button>
-                        </CardBody>
-                      </Card>
-
-                    </Col>
+                       </CardBody>
+                     </Card>
+                   </Col>)
+                   })}
                   </Row>
                 </Col>
               </Row>
