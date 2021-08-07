@@ -20,10 +20,15 @@ import React from "react";
 // reactstrap components
 import { Button, Card, Container, Row, Col } from "reactstrap";
 import Carousels from "../../components/Carousel";
+import Typing from 'components/Typing'
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 import profile from "assets/img/theme/team-4-800x800.jpg";
+import css from 'assets/img/theme/css1.png'
+import html from 'assets/img/theme/html.png'
+import js from 'assets/img/theme/js1.png'
+
 
 
 
@@ -34,7 +39,7 @@ class Profile extends React.Component {
     this.state={
       text: `Hello my name is ashrf obeidat and i have a bacholer degree
       in plant production from jordan university of scince and technology i
-       recently finished an extinsev  web develpoment boot camp`,
+       recently finished an extinsev  web develpoment bootcamp...`,
        link: 'show more'
     }
   }
@@ -96,40 +101,25 @@ class Profile extends React.Component {
                       className="order-lg-3 text-lg-right align-self-lg-center"
                       lg="4"
                     >
-                      <div className="card-profile-actions py-4 mt-lg-0">
-                        <Button
-                          className="mr-4"
-                          color="info"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                          size="sm"
-                        >
-                          Connect
-                        </Button>
-                        <Button
-                          className="float-right"
-                          color="default"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                          size="sm"
-                        >
-                          Message
-                        </Button>
+                      <div className="card-profile-actions py-4 mt-lg-0 ">
+                      <Typing />
+
+
                       </div>
                     </Col>
                     <Col className="order-lg-1" lg="4">
                       <div className="card-profile-stats d-flex justify-content-center">
                         <div>
-                          <span className="heading">22</span>
-                          <span className="description">Friends</span>
+                          <span className="heading">html</span>
+                         <img src={html} style={{width:'100px'}}/>
                         </div>
                         <div>
-                          <span className="heading">10</span>
-                          <span className="description">Photos</span>
+                          <span className="heading">css</span>
+                          <img src={css} style={{width:'100px'}}/>
                         </div>
                         <div>
-                          <span className="heading">89</span>
-                          <span className="description">Comments</span>
+                          <span className="heading">javascript</span>
+                          <img src={js} style={{width:'100px'}}/>
                         </div>
                       </div>
                     </Col>
@@ -172,18 +162,13 @@ class Profile extends React.Component {
                             tammates and clients , i beileve that i will fit in
                             this great working environmnet and my skills will
                             develop even more and of course , this will be a great
-                            chance to make new friends . What excites you the most
-                            about tech? the feeling that Every thing is possible
-                            as far as technology is been concerned. When you are
-                            surrounded with technical things you feel much more
-                            ‘powerfull'. And the feeling that you are not alone is
-                            always backing you .`,
+                            chance to make new friends .`,
                             link:'show less'
                           })
                           this.state.link==='show less'&& this.setState({
                             text:`Hello my name is ashrf obeidat and i have a bacholer degree
                             in plant production from jordan university of scince and technology i
-                             recently finished an extinsev  web develpoment boot camp `,
+                             recently finished an extinsev  web develpoment bootcamp... `,
                             link:'show more'
                           })
                           e.preventDefault()} }>
@@ -199,9 +184,54 @@ class Profile extends React.Component {
           </section>
           <div  style={{width:'90%', margin:'0 auto',height:'30%'}}>
           <Carousels />
+
           </div>
 
+
         </main>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <Container style={{padding:'50px' , position:'relative'}}>
+<Card className="card-profile shadow mt--300">
+  <div className="px-4">
+    <Row className="justify-content-center"></Row>
+      <Col className="order-lg-2" lg="3">
+      </Col>
+      <Col
+        className="order-lg-3 text-lg-right align-self-lg-center"
+        lg="4"
+      >
+
+      </Col>
+
+
+
+    <div className="mt-5 py-5 border-top text-center">
+      <strong> What excites me the most
+  about tech?</strong>
+      <Row className="justify-content-center">
+        <Col lg="9">
+          <p>
+          the feeling that Every thing is possible
+  as far as technology is been concerned. When you are
+  surrounded with technical things you feel much more
+  ‘powerfull'. And the feeling that you are not alone is
+  always backing you  .
+          </p>
+        </Col>
+
+      </Row>
+    </div>
+  </div>
+</Card>
+</Container>
         <SimpleFooter />
       </>
     );
